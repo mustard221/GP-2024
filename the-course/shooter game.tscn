@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5uomgf5sjkvn"]
+
+[ext_resource type="Script" path="res://shooter game.gd" id="1_qbhe5"]
+[ext_resource type="PackedScene" uid="uid://dcn4soippejj5" path="res://bullet.tscn" id="2_ptvrp"]
+[ext_resource type="Texture2D" uid="uid://b7oqcckaag0bu" path="res://assets/PNG/Sprites/Astronauts/spaceAstronauts_015.png" id="3_luwaq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_silkb"]
+radius = 27.4591
+
+[node name="ShooterGame" type="Node2D"]
+
+[node name="Shooter" type="RigidBody2D" parent="." node_paths=PackedStringArray("bullet_spawn")]
+position = Vector2(561, 298)
+mass = 5.0
+linear_damp = 2.047
+script = ExtResource("1_qbhe5")
+bullet_scene = ExtResource("2_ptvrp")
+bullet_spawn = NodePath("Fire_point")
+
+[node name="Sprite2D" type="Sprite2D" parent="Shooter"]
+texture = ExtResource("3_luwaq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shooter"]
+shape = SubResource("CircleShape2D_silkb")
+
+[node name="Fire_point" type="Node2D" parent="Shooter"]
+position = Vector2(31, 10)
