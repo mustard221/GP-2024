@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=7 format=3 uid="uid://dcn4soippejj5"]
 
 [ext_resource type="Script" path="res://bullet.gd" id="1_csdhu"]
@@ -35,3 +36,22 @@ stream = ExtResource("3_ba8d6")
 autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+=======
+[gd_scene load_steps=3 format=3 uid="uid://4vxiu70csqqn"]
+
+[ext_resource type="Texture2D" uid="uid://ckmaspa7xadub" path="res://assets/PNG/Sprites/Missiles/spaceMissiles_001.png" id="1_7qjah"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0cu6a"]
+size = Vector2(20, 31)
+
+[node name="bullet" type="CharacterBody2D"]
+position = Vector2(-5, -2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5, 4)
+texture = ExtResource("1_7qjah")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, 2)
+shape = SubResource("RectangleShape2D_0cu6a")
+>>>>>>> Stashed changes
