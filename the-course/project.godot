@@ -12,15 +12,11 @@ config_version=5
 
 <<<<<<< Updated upstream
 config/name="The Course 2024"
-<<<<<<< HEAD
 run/main_scene="res://space game.tscn"
 =======
 config/name="The Course"
 run/main_scene="res://spacegame.tscn"
 >>>>>>> Stashed changes
-=======
-run/main_scene="res://tank_game1.tscn"
->>>>>>> b9917c07b8d958647b24aff370de487b8c539336
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -82,7 +78,3 @@ fire={
 >>>>>>> Stashed changes
 ]
 }
-
-[physics]
-
-2d/default_gravity=0.0
