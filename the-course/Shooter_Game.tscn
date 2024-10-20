@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://do0ud12nmkhh2"]
+
+[ext_resource type="Script" path="res://shooter.gd" id="1_f2rej"]
+[ext_resource type="PackedScene" uid="uid://cog56iqa3mw3o" path="res://bullet2.tscn" id="2_12ltl"]
+[ext_resource type="Texture2D" uid="uid://v4ts3by1d30w" path="res://assets/PNG/Sprites/Astronauts/spaceAstronauts_006.png" id="3_15rai"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cp8bm"]
+radius = 27.4591
+
+[node name="root" type="Node2D"]
+position = Vector2(-2, 1)
+
+[node name="shooter" type="CharacterBody2D" parent="." node_paths=PackedStringArray("bullet_spawn_point")]
+position = Vector2(551, 293)
+script = ExtResource("1_f2rej")
+bullet_scene = ExtResource("2_12ltl")
+bullet_spawn_point = NodePath("bullet_spawn_point")
+
+[node name="bullet_spawn_point" type="Marker2D" parent="shooter"]
+position = Vector2(39, 8)
+
+[node name="Sprite2D" type="Sprite2D" parent="shooter"]
+position = Vector2(10, -1)
+texture = ExtResource("3_15rai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shooter"]
+position = Vector2(11, 1)
+shape = SubResource("CircleShape2D_cp8bm")
