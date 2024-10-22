@@ -28,3 +28,4 @@ func _physics_process(delta: float) -> void:
 	
 	rotate(rot)
 	move_and_slide()
+	
