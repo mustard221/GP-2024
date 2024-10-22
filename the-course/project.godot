@@ -86,3 +86,7 @@ fire={
 >>>>>>> Stashed changes
 ]
 }
+
+[physics]
+
+2d/default_gravity=0.0
