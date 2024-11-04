@@ -10,6 +10,12 @@ config_version=5
 
 [application]
 
+<<<<<<< Updated upstream
+config/name="The Course 2024"
+<<<<<<< HEAD
+<<<<<<< HEAD
+run/main_scene="res://space game.tscn"
+=======
 config/name="The Course"
 run/main_scene="res://spacegame.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
