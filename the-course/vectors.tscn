@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://ca1fvt2cw0q44"]
+
+[ext_resource type="Script" path="res://vector.gd" id="1_pakn1"]
+[ext_resource type="Texture2D" uid="uid://d06ltsu0uwu8v" path="res://assets/PNG/Sprites/Astronauts/spaceAstronauts_017.png" id="1_vtjd1"]
+[ext_resource type="Texture2D" uid="uid://dfqem0ebv08jw" path="res://assets/PNG/Sprites/Astronauts/spaceAstronauts_001.png" id="2_teqr3"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(529, 271)
+
+[node name="player" type="Sprite2D" parent="."]
+texture = ExtResource("1_vtjd1")
+
+[node name="bug" type="Sprite2D" parent="."]
+position = Vector2(-238, 40)
+texture = ExtResource("2_teqr3")
+script = ExtResource("1_pakn1")
