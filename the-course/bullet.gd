@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 @export var explosion:PackedScene
 
-	
+
 func _process(delta):
 	velocity = -transform.y * speed
 	var c =  move_and_collide(velocity * delta)

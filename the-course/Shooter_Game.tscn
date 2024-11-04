@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://do0ud12nmkhh2"]
 
 [ext_resource type="Script" path="res://shooter.gd" id="1_f2rej"]
-[ext_resource type="PackedScene" uid="uid://cog56iqa3mw3o" path="res://bullet2.tscn" id="2_12ltl"]
+[ext_resource type="PackedScene" uid="uid://cog56iqa3mw3o" path="res://bullet2.tscn" id="2_nhsvh"]
 [ext_resource type="Texture2D" uid="uid://v4ts3by1d30w" path="res://assets/PNG/Sprites/Astronauts/spaceAstronauts_006.png" id="3_15rai"]
 [ext_resource type="Texture2D" uid="uid://brqj28dpieib8" path="res://assets/PNG/Sprites/Astronauts/spaceAstronauts_002.png" id="4_lbgq3"]
 [ext_resource type="Script" path="res://enemy.gd" id="4_mqxa2"]
@@ -18,10 +18,10 @@ position = Vector2(-2, 1)
 [node name="shooter" type="CharacterBody2D" parent="." node_paths=PackedStringArray("bullet_spawn_point")]
 position = Vector2(551, 293)
 script = ExtResource("1_f2rej")
-bullet_scene = ExtResource("2_12ltl")
+bullet_scene = ExtResource("2_nhsvh")
 bullet_spawn_point = NodePath("bullet_spawn_point")
 
-[node name="bullet_spawn_point" type="Marker2D" parent="shooter"]
+[node name="bullet_spawn_point" type="Node2D" parent="shooter"]
 position = Vector2(39, 8)
 
 [node name="Sprite2D" type="Sprite2D" parent="shooter"]
