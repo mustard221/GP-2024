@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://c33sm0hdspsfq"]
+
+[ext_resource type="Script" path="res://node_2d.gd" id="1_hls4g"]
+[ext_resource type="Texture2D" uid="uid://63rabor1j5wf" path="res://assets/PNG/frog.jpg" id="2_qb3dy"]
+[ext_resource type="Script" path="res://godotsyntax.gd" id="3_8jmpm"]
+[ext_resource type="Script" path="res://basicsyntax.gd" id="4_8v4xf"]
+[ext_resource type="Texture2D" uid="uid://puaoy7bkhw05" path="res://assets/PNG/saturn-transparent-1566415100.png" id="5_rhypp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ltjgc"]
+size = Vector2(562, 568.5)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_hls4g")
+
+[node name="wall1" type="Area2D" parent="."]
+position = Vector2(1072, -47)
+
+[node name="frog" type="Sprite2D" parent="wall1"]
+position = Vector2(185, 382.3)
+texture = ExtResource("2_qb3dy")
+script = ExtResource("3_8jmpm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall1"]
+position = Vector2(186, 381.75)
+shape = SubResource("RectangleShape2D_ltjgc")
+
+[node name="wall" type="Area2D" parent="."]
+position = Vector2(501, 305)
+script = ExtResource("4_8v4xf")
+
+[node name="planet" type="Sprite2D" parent="wall"]
+texture = ExtResource("5_rhypp")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="wall"]
+polygon = PackedVector2Array(-206, -135, -236, 17, -203, 121, -73, 239, 100, 230, 130, 205, 243, 298, 367, 385, 393, 385, 394, 367, 354, 303, 208, 136, 191, 126, 224, 71, 229, 2, 206, -79, 122, -183, 48, -212, -53, -217, -122, -190, -248, -303, -315, -360, -368, -387, -389, -389, -381, -367, -358, -309, -238, -160)
