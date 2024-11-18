@@ -1,10 +1,6 @@
 extends Node2D
 
 
-<<<<<<< HEAD
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-=======
 @export var bug_scene:PackedScene
 
 # Called when the node enters the scene tree for the first time.
@@ -18,7 +14,6 @@ func _ready() -> void:
 		w.position = p
 		add_child(w)
 
->>>>>>> 344b3500755176c7aaf1b180a630655787f55e8f
 	pass # Replace with function body.
 
 
