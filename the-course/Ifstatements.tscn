@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtbgeefwrlouk"]
+
+[ext_resource type="Script" path="res://if_statement.gd" id="1_q3d42"]
+[ext_resource type="Script" path="res://move.gd" id="2_bo1rj"]
+[ext_resource type="Texture2D" uid="uid://63rabor1j5wf" path="res://assets/PNG/frog.jpg" id="2_s6u8j"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_q3d42")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(369, 318)
+scale = Vector2(0.239362, 0.309187)
+texture = ExtResource("2_s6u8j")
+script = ExtResource("2_bo1rj")
