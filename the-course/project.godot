@@ -12,6 +12,7 @@ config_version=5
 
 <<<<<<< HEAD
 config/name="The Course 2024"
+<<<<<<< HEAD
 run/main_scene="res://bugzap.tscn"
 =======
 <<<<<<< Updated upstream
@@ -24,6 +25,10 @@ config/name="The Course"
 run/main_scene="res://spacegame.tscn"
 >>>>>>> 7a1890fd5a44864826b5a9b11173ba6160a82634
 config/features=PackedStringArray("4.3", "Forward Plus")
+=======
+run/main_scene="res://if_statement.tscn"
+config/features=PackedStringArray("4.4", "Forward Plus")
+>>>>>>> 55932441a984cf73751705b877da75a315761fc6
 config/icon="res://icon.svg"
 
 [global_group]
