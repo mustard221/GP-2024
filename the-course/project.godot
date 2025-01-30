@@ -14,11 +14,16 @@ config_version=5
 config/name="The Course 2024"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 run/main_scene="res://space game.tscn"
 =======
 config/name="The Course"
 run/main_scene="res://spacegame.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+=======
+run/main_scene="res://if_statement.tscn"
+config/features=PackedStringArray("4.4", "Forward Plus")
+>>>>>>> 55932441a984cf73751705b877da75a315761fc6
 config/icon="res://icon.svg"
 
 [global_group]
