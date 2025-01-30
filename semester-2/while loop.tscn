@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4r5yn2n8fvc6"]
+
+[ext_resource type="Script" path="res://while.gd" id="1_76pfd"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_76pfd")
