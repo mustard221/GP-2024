@@ -1,0 +1,115 @@
+[gd_scene load_steps=11 format=3 uid="uid://dehae187l5gn2"]
+
+[ext_resource type="Script" path="res://scripts/lv2.gd" id="2_2m7pa"]
+[ext_resource type="PackedScene" uid="uid://w7m6tehvvy3g" path="res://Scenes/Prefabs/player.tscn" id="2_lpo2y"]
+[ext_resource type="PackedScene" uid="uid://cyti38f0lagf2" path="res://Scenes/Prefabs/LevelFinishDoor.tscn" id="4_0dts2"]
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="4_ndpt4"]
+[ext_resource type="Texture2D" uid="uid://jaegp53ccc7w" path="res://Assets/Spritesheet/platformPack_tilesheet.png" id="5_8107p"]
+[ext_resource type="PackedScene" uid="uid://c6ltk102tqq8d" path="res://Scenes/Levels/Level_03.tscn" id="6_xxeri"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gs0qk"]
+texture = ExtResource("5_8107p")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, 32, 32, 32, 32, -32, -32, -32)
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 16, -32, 16)
+2:4/0 = 0
+2:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:4/0/physics_layer_0/angular_velocity = 0.0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 0, -32, 0)
+4:0/0 = 0
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+4:1/0 = 0
+4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:1/0/physics_layer_0/angular_velocity = 0.0
+5:0/0 = 0
+5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:0/0/physics_layer_0/angular_velocity = 0.0
+5:1/0 = 0
+5:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:1/0/physics_layer_0/angular_velocity = 0.0
+2:5/0 = 0
+2:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:5/0/physics_layer_0/angular_velocity = 0.0
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[sub_resource type="TileSet" id="TileSet_ywwrl"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_gs0qk")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rndpx"]
+texture = ExtResource("5_8107p")
+texture_region_size = Vector2i(64, 64)
+0:5/0 = 0
+0:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:5/0/physics_layer_0/angular_velocity = 0.0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 0, 16, 0, 32, 32, -32, 32)
+
+[sub_resource type="TileSet" id="TileSet_2fcbi"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_rndpx")
+
+[node name="Level_02" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_lpo2y")]
+z_index = 1
+position = Vector2(64, -201)
+script = ExtResource("2_2m7pa")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(16, 36)
+limit_left = 0
+limit_right = 1985
+limit_bottom = 705
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.4
+drag_top_margin = 0.4
+drag_right_margin = 0.4
+drag_bottom_margin = 0.4
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="GameManager" type="Node2D" parent="."]
+script = ExtResource("4_ndpt4")
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="Ground" type="TileMap" parent="Level" groups=["Ground"]]
+tile_set = SubResource("TileSet_ywwrl")
+format = 2
+layer_0/tile_data = PackedInt32Array(458764, 0, 2, -131072, 0, 2, -131071, 0, 2, -131070, 0, 2, -131069, 0, 2, -131068, 0, 2, -196601, 0, 2, -196600, 0, 2, -196599, 0, 2, -196602, 0, 2, 6, 0, 2, 7, 0, 2, 8, 0, 2, 11, 0, 2, 12, 0, 2, 13, 0, 2, 14, 0, 2, 15, 0, 2, 16, 0, 2, 262157, 0, 2, 262158, 0, 2, 262159, 0, 2, 262160, 0, 2, 720915, 0, 2, 720916, 0, 2, 720917, 0, 2, 720918, 0, 2, 720919, 0, 2, 720920, 0, 2, 720921, 0, 2, 720922, 0, 2, 720923, 0, 2, 720924, 0, 2, 720925, 0, 2, 720926, 0, 2, 458768, 0, 2, 458767, 0, 2, 458766, 0, 2, 589839, 0, 2, 589838, 0, 2, 589837, 0, 2, 589841, 0, 2, 589842, 0, 2, 589843, 0, 2, 655372, 0, 2, 655371, 0, 2, 655370, 0, 2, 655369, 0, 2, 655368, 0, 2, 655367, 0, 2, 458765, 0, 2, 589840, 0, 2)
+
+[node name="Traps" type="TileMap" parent="Level" groups=["Traps"]]
+tile_set = SubResource("TileSet_2fcbi")
+format = 2
+layer_0/tile_data = PackedInt32Array(1310734, 0, 5, 1310735, 0, 5, 1310736, 0, 5, 1310737, 0, 5, 1310738, 0, 5, 1310739, 0, 5, 1310740, 0, 5, 1310741, 0, 5, 1310742, 0, 5, 1310743, 0, 5, 1310744, 0, 5, 1310745, 0, 5, 1310746, 0, 5, 1310747, 0, 5, 1310748, 0, 5, 1310749, 0, 5, 1310750, 0, 5, 1310751, 0, 5, 1310752, 0, 5, 1310753, 0, 5, 1310754, 0, 5, 1310733, 0, 5, 1310732, 0, 5, 1310731, 0, 5, 1310730, 0, 5, 1310729, 0, 5, 1310728, 0, 5, 1310727, 0, 5, 1310726, 0, 5, 1310725, 0, 5, 1310724, 0, 5, 1310723, 0, 5, 1310722, 0, 5, 1310721, 0, 5, 1310720, 0, 5, 1376255, 0, 5, 1376254, 0, 5, 1376253, 0, 5, 1376252, 0, 5, 1376251, 0, 5, 1376250, 0, 5, 1376249, 0, 5, 1376248, 0, 5, 1376247, 0, 5, 1376246, 0, 5, 1376245, 0, 5, 1376244, 0, 5, 1376243, 0, 5, 1376242, 0, 5, 1376241, 0, 5, 1376240, 0, 5, 1310755, 0, 5, 1310756, 0, 5, 1310757, 0, 5, 1310768, 0, 5, 1310767, 0, 5, 1310766, 0, 5, 1310765, 0, 5, 1310764, 0, 5, 1310763, 0, 5, 1310762, 0, 5, 1310761, 0, 5, 1310760, 0, 5, 1310759, 0, 5, 1310758, 0, 5)
+
+[node name="SpawnPoint" type="Marker2D" parent="Level"]
+unique_name_in_owner = true
+position = Vector2(30, -171)
+
+[node name="UserInterface" type="CanvasLayer" parent="."]
+
+[node name="LevelFinishDoor" parent="." instance=ExtResource("4_0dts2")]
+z_index = 1
+position = Vector2(1912, 661)
+next_scene = ExtResource("6_xxeri")
+
+[node name="LevelFinishDoor2" parent="." instance=ExtResource("4_0dts2")]
+z_index = 1
+position = Vector2(559, -224)
+next_scene = null
