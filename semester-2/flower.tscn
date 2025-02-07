@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c86r8gqx4yltu"]
+
+[ext_resource type="Script" path="res://flower.gd" id="1_datie"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_datie")
