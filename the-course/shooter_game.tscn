@@ -12,12 +12,11 @@ radius = 27.4591
 [node name="root" type="Node2D"]
 position = Vector2(-2, 1)
 
-[node name="ufo_spawner" type="Marker2D" parent="."]
-script = ExtResource("4_gm47b")
-ufo_scene = ExtResource("3_6xsbg")
-count = 5
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="player" type="CharacterBody2D" parent="." node_paths=PackedStringArray("bullet_spawn_point")]
+position = Vector2(551, 293)
+script = ExtResource("1_f2rej")
+bullet_scene = ExtResource("2_nhsvh")
+bullet_spawn_point = NodePath("bullet_spawn_point")
 
 [node name="Sprite2D" type="Sprite2D" parent="player"]
 position = Vector2(10, -1)
