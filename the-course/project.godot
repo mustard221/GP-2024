@@ -1,0 +1,137 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+config/name="The Course 2024"
+<<<<<<< HEAD
+<<<<<<< HEAD
+run/main_scene="res://bugzap.tscn"
+=======
+<<<<<<< Updated upstream
+config/name="The Course 2024"
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 31cd1e526d0c6c696bdc5b78c29438f724c72496
+<<<<<<< HEAD
+<<<<<<< HEAD
+run/main_scene="res://space game.tscn"
+=======
+config/name="The Course"
+run/main_scene="res://spacegame.tscn"
+>>>>>>> 7a1890fd5a44864826b5a9b11173ba6160a82634
+config/features=PackedStringArray("4.3", "Forward Plus")
+=======
+run/main_scene="res://if_statement.tscn"
+=======
+run/main_scene="uid://bnlh5xpotna2y"
+>>>>>>> 53b9b5b23b07360334c7696df13d12cb682aea68
+=======
+config/name="Game Programming 2024"
+run/main_scene="uid://5xmg4kyjea30"
+>>>>>>> 14e97284dfee8920a46674950e5b3752cc5c8a66
+config/features=PackedStringArray("4.4", "Forward Plus")
+>>>>>>> 55932441a984cf73751705b877da75a315761fc6
+config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
+[global_group]
+
+bomb=""
+
+[gui]
+
+theme/custom="uid://dyroetfulq0o6"
+theme/custom_font="uid://dyroetfulq0o6"
+
+[input]
+
+<<<<<<< HEAD
+left=
+=======
+"turn _left"={
+>>>>>>> 7a1890fd5a44864826b5a9b11173ba6160a82634
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194319,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+right={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":100,"location":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194321,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+forward={
+"deadzone": 0.5,
+<<<<<<< HEAD
+"events": Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":-1.0,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194320,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+=======
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194320,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+>>>>>>> 7a1890fd5a44864826b5a9b11173ba6160a82634
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":119,"location":0,"echo":false,"script":null)
+]
+}
+back={
+"deadzone": 0.5,
+<<<<<<< HEAD
+"events": Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":1,"axis_value":1.0,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194322,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+=======
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194322,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+>>>>>>> 7a1890fd5a44864826b5a9b11173ba6160a82634
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":115,"location":0,"echo":false,"script":null)
+]
+}
+fire={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+<<<<<<< HEAD
+=======
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":3,"pressure":0.0,"pressed":true,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":0,"pressure":0.0,"pressed":true,"script":null)
+]
+}
+reset_spiral={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+>>>>>>> 14e97284dfee8920a46674950e5b3752cc5c8a66
+]
+}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 7a1890fd5a44864826b5a9b11173ba6160a82634
+
+[physics]
+
+2d/default_gravity=0.0
+
+[rendering]
+
+textures/vram_compression/import_etc2_astc=true
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 6878b50158a291b71d9fdde59babafc75d9bae0f
+>>>>>>> 7a1890fd5a44864826b5a9b11173ba6160a82634
+=======
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
+anti_aliasing/quality/msaa_2d=2
+>>>>>>> 14e97284dfee8920a46674950e5b3752cc5c8a66
