@@ -1,18 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://5xmg4kyjea30"]
+[gd_scene load_steps=7 format=3 uid="uid://do0ud12nmkhh2"]
 
-[ext_resource type="Script" uid="uid://byl3sew3vbcr5" path="res://shooter_game.gd" id="1_c5ar1"]
-[ext_resource type="PackedScene" uid="uid://dogoya3fntpbk" path="res://dude.tscn" id="2_gm47b"]
-[ext_resource type="PackedScene" uid="uid://7ffshnxf3qah" path="res://ufo.tscn" id="3_6xsbg"]
-[ext_resource type="PackedScene" uid="uid://nb8daasaeu3i" path="res://explosion.tscn" id="3_c5ar1"]
-[ext_resource type="Script" uid="uid://ck2i25kw3ks1m" path="res://ufo_spawner.gd" id="4_gm47b"]
+[ext_resource type="Script" path="res://shooter.gd" id="1_f2rej"]
+[ext_resource type="PackedScene" uid="uid://cog56iqa3mw3o" path="res://bullet2.tscn" id="2_nhsvh"]
+[ext_resource type="Texture2D" uid="uid://cyb1li5opi7vq" path="res://assets/PNG/Sprites/Astronauts/spaceAstronauts_012.png" id="3_0o1mo"]
+[ext_resource type="Script" path="res://enemy.gd" id="4_mqxa2"]
+[ext_resource type="Texture2D" uid="uid://dtkdt7tnn4k1e" path="res://assets/PNG/Sprites/Astronauts/spaceAstronauts_014.png" id="4_ys8rd"]
 
-[node name="shooter_game" type="Node2D"]
-script = ExtResource("1_c5ar1")
+[sub_resource type="CircleShape2D" id="CircleShape2D_cp8bm"]
+radius = 27.4591
 
-[node name="dude" parent="." instance=ExtResource("2_gm47b")]
-color = Color(0, 1, 0.25, 0.847059)
-speed = 500.0
-explosion = ExtResource("3_c5ar1")
+[node name="root" type="Node2D"]
+position = Vector2(-2, 1)
 
 [node name="ufo_spawner" type="Marker2D" parent="."]
 script = ExtResource("4_gm47b")
@@ -21,35 +19,18 @@ count = 5
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ufo_count" type="Label" parent="CanvasLayer"]
-offset_right = 134.0
-offset_bottom = 30.0
-text = "UFO_COUNT: 0"
+[node name="Sprite2D" type="Sprite2D" parent="player"]
+position = Vector2(10, -1)
+texture = ExtResource("3_0o1mo")
 
-[node name="lives" type="Label" parent="CanvasLayer"]
-offset_left = 1.0
-offset_top = 110.0
-offset_right = 331.0
-offset_bottom = 185.0
-text = "LIVES: 10"
+[node name="bullet_spawn_point" type="Node2D" parent="player"]
+position = Vector2(39, 8)
 
-[node name="ammo" type="Label" parent="CanvasLayer"]
-offset_left = 8.0
-offset_top = 221.0
-offset_right = 338.0
-offset_bottom = 296.0
-text = "AMMO: 100"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2(11, 1)
+shape = SubResource("CircleShape2D_cp8bm")
 
-[node name="level" type="Label" parent="CanvasLayer"]
-offset_left = 8.0
-offset_top = 320.0
-offset_right = 338.0
-offset_bottom = 395.0
-text = "LEVEL: 0"
-
-[node name="target" type="Label" parent="CanvasLayer"]
-offset_left = 14.0
-offset_top = 419.0
-offset_right = 344.0
-offset_bottom = 494.0
-text = "ufo_COUNT: 0"
+[node name="Sprite2D enemy" type="Sprite2D" parent="player"]
+position = Vector2(-231, -164)
+texture = ExtResource("4_ys8rd")
+script = ExtResource("4_mqxa2")
