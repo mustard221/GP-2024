@@ -2,6 +2,7 @@ extends Node2D
 
 # when the scene is loaded, assign these variables from the scene
 @onready var ufo_spawner = $ufo_spawner
+@onready var ufo_spawner2 = $ufo_spawner2
 @onready var dude = $dude
 
 var target = 0
@@ -16,10 +17,15 @@ func next_level():
 	ufo_spawner.count = randi_range(2, 10)
 	ufo_spawner.rate  = randf_range(1, 5)
 	ufo_spawner.position = dude.position
-	ufo_spawner.spawn()	
+	ufo_spawner.spawn()
+	ufo_spawner2.radius = randf_range(200, 400)
+	ufo_spawner2.count = randi_range(2, 10)
+	ufo_spawner2.rate  = randf_range(1, 5)
+	ufo_spawner2.position = dude.position
+	ufo_spawner2.spawn()
 	level = level + 1
 	# next target
-	target = target + ufo_spawner.count
+	target = target + ufo_spawner2.count + ufo_spawner.count
 
 
 func _process(delta):

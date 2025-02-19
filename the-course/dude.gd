@@ -26,7 +26,7 @@ extends CharacterBody2D
 @export var bullet_scene:PackedScene
 @export var bullet_spawn:Node2D
 
-@export var lives:int = 100
+@export var lives:int = 10
 @export var ammo:int = 100
 @export var ufo_count:int = 0
 

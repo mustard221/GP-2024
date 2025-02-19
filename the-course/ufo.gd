@@ -51,7 +51,6 @@ func _process(delta):
 	queue_redraw()
 	pass
 
-
 func _on_timer_timeout() -> void:
 	# drop a bullet
 	var b = bullet_scene.instantiate()
