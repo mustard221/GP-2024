@@ -33,20 +33,14 @@ func _physics_process(delta: float) -> void:
 	var rot = deg_to_rad(r * TURN_RATE * delta)
 	
 	var f = Input.get_axis("move_backwards", "move_forwards")
-<<<<<<< HEAD
-<<<<<<< HEAD
-	
-	var vel = transform.x * f * SPEED
-=======
 
 	var vel = - transform.y * f * SPEED
 	print(transform.y)
->>>>>>> c7ba656818fe7a4f732dda743b40e4a87fa04ac2
-=======
+
 
 	var vel = - transform.y * f * SPEED
 	print(transform.y)
->>>>>>> 7a1890fd5a44864826b5a9b11173ba6160a82634
+
 	velocity = vel
 	
 	
@@ -54,16 +48,12 @@ func _physics_process(delta: float) -> void:
 		var b = bullet_scene.instantiate()
 		b.global_position = bullet_spawn_point.global_position
 		b.global_rotation = bullet_spawn_point.global_rotation
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 		get_tree().get_root().add_child(b) 
-=======
-		get_parent().add_child(b)
->>>>>>> c7ba656818fe7a4f732dda743b40e4a87fa04ac2
+
 	
-=======
-		get_parent().add_child(b)
->>>>>>> 7a1890fd5a44864826b5a9b11173ba6160a82634
+
+
 	
 	rotate(rot)
 	move_and_slide()
