@@ -2,13 +2,8 @@
 
 [ext_resource type="Script" uid="uid://2c4ruhqpdnx5" path="res://root1.gd" id="1_027t5"]
 [ext_resource type="FontFile" uid="uid://0jk2p2kfmllu" path="res://fonts/Hyperspace Bold.otf" id="2_601f3"]
-<<<<<<< HEAD
-[ext_resource type="Script" path="res://player2.gd" id="3_hurv8"]
-[ext_resource type="PackedScene" uid="uid://4vxiu70csqqn" path="res://bullet.tscn" id="4_w5fy6"]
-=======
 [ext_resource type="Script" uid="uid://cwbrwgouo0kkq" path="res://player2.gd" id="3_hurv8"]
 [ext_resource type="PackedScene" uid="uid://dcn4soippejj5" path="res://bullet.tscn" id="4_w5fy6"]
->>>>>>> d454251ae3b5fe9119a994649e29eb365c628633
 [ext_resource type="AudioStream" uid="uid://bq4kjn4r61ps2" path="res://sounds/jet.wav" id="5_ee1yw"]
 [ext_resource type="Script" uid="uid://c5kt6yrp2pxxs" path="res://jet_sound.gd" id="6_6rfpp"]
 [ext_resource type="Script" uid="uid://d11q2l5gays6q" path="res://spawner.gd" id="7_jndn7"]
