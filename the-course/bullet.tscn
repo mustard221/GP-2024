@@ -1,6 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://4vxiu70csqqn"]
 
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://ckmaspa7xadub" path="res://assets/PNG/Sprites/Missiles/spaceMissiles_001.png" id="1_7qjah"]
+=======
+[ext_resource type="Script" uid="uid://up5xhrha1b72" path="res://bullet.gd" id="1_csdhu"]
+[ext_resource type="PackedScene" uid="uid://nb8daasaeu3i" path="res://explosion.tscn" id="2_hvpqa"]
+[ext_resource type="AudioStream" uid="uid://dxtc48o5qwpl8" path="res://sounds/Laser_Shoot38.wav" id="3_ba8d6"]
+>>>>>>> d454251ae3b5fe9119a994649e29eb365c628633
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0cu6a"]
 size = Vector2(20, 31)
