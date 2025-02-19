@@ -12,7 +12,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	var to_player = player.global_position - global_position
+	var to_player = Dude.global_position - global_position
 	
 	to_player = to_player.normalized()
 	
