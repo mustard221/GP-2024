@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=6 format=3 uid="uid://7ffshnxf3qah"]
-=======
 [gd_scene load_steps=7 format=3 uid="uid://7ffshnxf3qah"]
->>>>>>> 497471b29d8bc96e2cecbdf555f9b5ac346dd4d8
 
 [ext_resource type="Script" path="res://ufo.gd" id="1_c0rv2"]
 [ext_resource type="PackedScene" uid="uid://dl7bn3bgrqbcg" path="res://dude_bullet.tscn" id="2_lwnds"]
@@ -27,11 +23,7 @@ loot_array = Array[PackedScene]([ExtResource("3_vg23t"), ExtResource("4_bh5go")]
 
 [node name="Synth" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_7har2")
-<<<<<<< HEAD
-pitch_scale = 0.995252
-=======
 pitch_scale = 1.02033
->>>>>>> 497471b29d8bc96e2cecbdf555f9b5ac346dd4d8
 autoplay = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -39,11 +31,7 @@ position = Vector2(-1, -0.5)
 shape = SubResource("RectangleShape2D_c0rv2")
 
 [node name="Timer" type="Timer" parent="."]
-<<<<<<< HEAD
-wait_time = 4.96882
-=======
 wait_time = 3.12721
->>>>>>> 497471b29d8bc96e2cecbdf555f9b5ac346dd4d8
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(1, 40)
