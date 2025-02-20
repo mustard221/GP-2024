@@ -1,15 +1,20 @@
+<<<<<<< HEAD
 [gd_scene load_steps=6 format=3 uid="uid://7ffshnxf3qah"]
+=======
+[gd_scene load_steps=7 format=3 uid="uid://7ffshnxf3qah"]
+>>>>>>> 497471b29d8bc96e2cecbdf555f9b5ac346dd4d8
 
 [ext_resource type="Script" path="res://ufo.gd" id="1_c0rv2"]
 [ext_resource type="PackedScene" uid="uid://dl7bn3bgrqbcg" path="res://dude_bullet.tscn" id="2_lwnds"]
 [ext_resource type="PackedScene" uid="uid://nb8daasaeu3i" path="res://explosion.tscn" id="2_po7uc"]
 [ext_resource type="AudioStream" uid="uid://cxvpo2egevp8l" path="res://sounds/jump.wav" id="3_7har2"]
+[ext_resource type="PackedScene" uid="uid://byhadckf2ftdm" path="res://health.tscn" id="3_vg23t"]
+[ext_resource type="PackedScene" uid="uid://cqp7p5hyewbvj" path="res://ammo.tscn" id="4_bh5go"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c0rv2"]
 size = Vector2(88, 51)
 
 [node name="ufo" type="CharacterBody2D" node_paths=PackedStringArray("bullet_spawn") groups=["ufo"]]
-scale = Vector2(1e-05, 1e-05)
 collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_c0rv2")
@@ -18,10 +23,15 @@ explosion = ExtResource("2_po7uc")
 line_size = 5.0
 bullet_scene = ExtResource("2_lwnds")
 bullet_spawn = NodePath("Marker2D")
+loot_array = Array[PackedScene]([ExtResource("3_vg23t"), ExtResource("4_bh5go")])
 
 [node name="Synth" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_7har2")
+<<<<<<< HEAD
 pitch_scale = 0.995252
+=======
+pitch_scale = 1.02033
+>>>>>>> 497471b29d8bc96e2cecbdf555f9b5ac346dd4d8
 autoplay = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -29,7 +39,11 @@ position = Vector2(-1, -0.5)
 shape = SubResource("RectangleShape2D_c0rv2")
 
 [node name="Timer" type="Timer" parent="."]
+<<<<<<< HEAD
 wait_time = 4.96882
+=======
+wait_time = 3.12721
+>>>>>>> 497471b29d8bc96e2cecbdf555f9b5ac346dd4d8
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(1, 40)
