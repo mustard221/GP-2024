@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0lvqriptrnn1"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_olywx"]
+[ext_resource type="Script" path="res://enemy2.gd" id="2_qmweq"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(973, 744)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(493, -76)
+script = ExtResource("2_qmweq")
+
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2(986, -152)
+script = ExtResource("1_olywx")
