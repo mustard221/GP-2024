@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://dalfyinsp1orb"]
+[gd_scene load_steps=13 format=3 uid="uid://dalfyinsp1orb"]
 
 [ext_resource type="Texture2D" uid="uid://63rabor1j5wf" path="res://assets/PNG/frog.jpg" id="1_yqx2i"]
 [ext_resource type="Script" path="res://platformer_dude.gd" id="2_0gx0o"]
-[ext_resource type="Script" path="res://label.gd" id="2_33cma"]
 [ext_resource type="Texture2D" uid="uid://puaoy7bkhw05" path="res://assets/PNG/saturn-transparent-1566415100.png" id="3_bwfp0"]
 [ext_resource type="Script" path="res://collectable.gd" id="3_j8e8g"]
 [ext_resource type="Script" path="res://enemy_dude.gd" id="7_gjyuj"]
@@ -95,7 +94,6 @@ offset_top = -487.0
 offset_right = -496.0
 offset_bottom = -412.0
 text = "Collected: 0"
-script = ExtResource("2_33cma")
 
 [node name="collectable" type="Area2D" parent="." groups=["collectabes"]]
 position = Vector2(2098, 614)
