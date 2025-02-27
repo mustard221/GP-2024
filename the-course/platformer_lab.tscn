@@ -1,0 +1,131 @@
+[gd_scene load_steps=14 format=3 uid="uid://dalfyinsp1orb"]
+
+[ext_resource type="Texture2D" uid="uid://63rabor1j5wf" path="res://assets/PNG/frog.jpg" id="1_yqx2i"]
+[ext_resource type="Script" path="res://platformer_dude.gd" id="2_0gx0o"]
+[ext_resource type="Script" path="res://label.gd" id="2_33cma"]
+[ext_resource type="Texture2D" uid="uid://puaoy7bkhw05" path="res://assets/PNG/saturn-transparent-1566415100.png" id="3_bwfp0"]
+[ext_resource type="Script" path="res://collectable.gd" id="3_j8e8g"]
+[ext_resource type="Script" path="res://enemy_dude.gd" id="7_gjyuj"]
+[ext_resource type="Texture2D" uid="uid://c844yfbd26ea8" path="res://sprites/bug.png" id="8_p3q7a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eg6l3"]
+size = Vector2(1085, 266.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6y4jt"]
+size = Vector2(174, 217)
+
+[sub_resource type="GDScript" id="GDScript_2uo3q"]
+script/source = "extends Camera2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xf1us"]
+radius = 232.174
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t3t8y"]
+size = Vector2(239, 89)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c165n"]
+radius = 325.014
+
+[node name="Node2D" type="Node2D"]
+
+[node name="platform1" type="StaticBody2D" parent="."]
+position = Vector2(610, 1086)
+
+[node name="Sprite2D" type="Sprite2D" parent="platform1"]
+position = Vector2(-2.38419e-07, 1)
+scale = Vector2(1.92376, 0.474382)
+texture = ExtResource("1_yqx2i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform1"]
+shape = SubResource("RectangleShape2D_eg6l3")
+
+[node name="platform2" type="StaticBody2D" parent="."]
+position = Vector2(1811, 914)
+
+[node name="Sprite2D" type="Sprite2D" parent="platform2"]
+position = Vector2(-2.38419e-07, 1)
+scale = Vector2(1.92376, 0.474382)
+texture = ExtResource("1_yqx2i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform2"]
+shape = SubResource("RectangleShape2D_eg6l3")
+
+[node name="platform3" type="StaticBody2D" parent="."]
+position = Vector2(2990, 1114)
+
+[node name="Sprite2D" type="Sprite2D" parent="platform3"]
+position = Vector2(-2.38419e-07, 1)
+scale = Vector2(1.92376, 0.474382)
+texture = ExtResource("1_yqx2i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platform3"]
+shape = SubResource("RectangleShape2D_eg6l3")
+
+[node name="platformer_dude" type="CharacterBody2D" parent="."]
+position = Vector2(196, 839)
+script = ExtResource("2_0gx0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="platformer_dude"]
+position = Vector2(-0.999996, 2)
+scale = Vector2(0.306738, 0.385159)
+texture = ExtResource("1_yqx2i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platformer_dude"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_6y4jt")
+
+[node name="Camera2D" type="Camera2D" parent="platformer_dude"]
+position = Vector2(786, -168)
+script = SubResource("GDScript_2uo3q")
+
+[node name="Label" type="Label" parent="platformer_dude/Camera2D"]
+offset_left = -862.0
+offset_top = -487.0
+offset_right = -496.0
+offset_bottom = -412.0
+text = "Collected: 0"
+script = ExtResource("2_33cma")
+
+[node name="collectable" type="Area2D" parent="." groups=["collectabes"]]
+position = Vector2(2098, 614)
+script = ExtResource("3_j8e8g")
+
+[node name="Sprite2D" type="Sprite2D" parent="collectable"]
+rotation = 0.0960535
+texture = ExtResource("3_bwfp0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectable"]
+position = Vector2(-2, 3)
+shape = SubResource("CircleShape2D_xf1us")
+
+[node name="enemy_dude" type="CharacterBody2D" parent="."]
+script = ExtResource("7_gjyuj")
+
+[node name="Sprite2D" type="Sprite2D" parent="enemy_dude"]
+position = Vector2(987, 887)
+scale = Vector2(8.26563, 3.92187)
+texture = ExtResource("8_p3q7a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_dude"]
+position = Vector2(987, 869)
+shape = SubResource("RectangleShape2D_t3t8y")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(950, 800)
+shape = SubResource("CircleShape2D_c165n")
+
+[connection signal="body_entered" from="collectable" to="collectable" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="enemy_dude" method="_on_area_2d_body_entered"]
