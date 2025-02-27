@@ -37,11 +37,7 @@ func _ready() -> void:
 		scale = Vector2.ZERO
 		var tween = create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 		tween.tween_property(self, "scale", Vector2.ONE, 1)
-<<<<<<< HEAD
-		
-=======
 		tween.finished.connect(movement)
->>>>>>> af22f6cd87334a2d3ed3984dfae7407c942f8fe7
 		# vary the pitch
 		$Synth.pitch_scale = randf_range(0.7, 1.3)
 		# wait 2 seconds
