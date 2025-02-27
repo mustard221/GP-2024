@@ -14,10 +14,13 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _ready() -> void:
 	next_level()
+<<<<<<< HEAD
 	var tween = create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BOUNCE)
 	tween.tween_property($Heroplanet, "pitch_scale", 4, 5)
 	tween.tween_property($Heroplanet, "pitch_scale", 1, 5)
 	$Heroplanet.play()
+=======
+>>>>>>> af22f6cd87334a2d3ed3984dfae7407c942f8fe7
 
 func next_level():
 	ufo_spawner.radius = randf_range(200, 250)
