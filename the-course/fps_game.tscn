@@ -1,0 +1,138 @@
+[gd_scene load_steps=18 format=3 uid="uid://bf4hsy722ygh3"]
+
+[ext_resource type="Script" path="res://fpsplayer.gd" id="1_buos4"]
+[ext_resource type="Script" path="res://platspawn.gd" id="2_mvrsf"]
+[ext_resource type="PackedScene" uid="uid://bt1veyi4n0lmc" path="res://platform.tscn" id="3_hdo7f"]
+[ext_resource type="PackedScene" uid="uid://xri7hxg18frh" path="res://gun.tscn" id="4_8bvcv"]
+[ext_resource type="Script" path="res://collectible.gd" id="4_wnst1"]
+[ext_resource type="Script" path="res://collect.gd" id="5_0oqm2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_retkv"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kmvmn"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bg12v"]
+sky_horizon_color = Color(0.64625, 0.651735, 0.666912, 1)
+sky_energy_multiplier = 0.9
+ground_bottom_color = Color(0.2, 0.152941, 0.117647, 1)
+ground_horizon_color = Color(0.64625, 0.651735, 0.666912, 1)
+
+[sub_resource type="Sky" id="Sky_ip03h"]
+sky_material = SubResource("ProceduralSkyMaterial_bg12v")
+
+[sub_resource type="Environment" id="Environment_3o5vv"]
+background_mode = 2
+sky = SubResource("Sky_ip03h")
+ambient_light_color = Color(1, 0.803277, 0.770465, 1)
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_51xar"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2u00g"]
+radius = 0.503565
+height = 2.07248
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_4oixi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4twi2"]
+vertex_color_is_srgb = true
+albedo_color = Color(0.294118, 0.541176, 0.223529, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x6ynb"]
+size = Vector3(34.3273, 0.441772, 34.6955)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nvg63"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_color = Color(1, 1, 1, 0)
+
+[node name="fps_game" type="Node3D"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 358.0
+offset_bottom = 98.0
+
+[node name="collectible" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6833, -0.0343152, -2.22732)
+script = ExtResource("4_wnst1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="collectible"]
+shape = SubResource("BoxShape3D_retkv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="collectible"]
+mesh = SubResource("BoxMesh_kmvmn")
+script = ExtResource("5_0oqm2")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3o5vv")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.961262, 0.270388, -0.0535382, 0, 0.194234, 0.980955, 0.275637, -0.942955, 0.18671, 0, 0, 0)
+shadow_enabled = true
+
+[node name="player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.294688, 0)
+script = ExtResource("1_buos4")
+score = null
+speed = null
+rot_speed = 360.0
+can_move = null
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player"]
+mesh = SubResource("CapsuleMesh_51xar")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.011306, 0)
+shape = SubResource("CapsuleShape3D_2u00g")
+
+[node name="Camera3D" type="Camera3D" parent="player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0368326, 0.435134, 0.141367)
+fov = 100.513
+
+[node name="gun" parent="player/Camera3D" instance=ExtResource("4_8bvcv")]
+transform = Transform3D(-0.998557, -0.0230712, -0.0484882, -0.0230441, 0.999734, -0.00111898, 0.0485011, 0, -0.998823, 0.575295, -0.27187, -0.681222)
+
+[node name="ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.26054, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ground"]
+transform = Transform3D(17.515, 0, 0, 0, 17.515, 0, 0, 0, 17.515, 0, -0.462906, -0.115828)
+mesh = SubResource("PlaneMesh_4oixi")
+surface_material_override/0 = SubResource("StandardMaterial3D_4twi2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.124037, -0.507086, -0.0439034)
+shape = SubResource("BoxShape3D_x6ynb")
+
+[node name="spawner" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.80861, 0, 0)
+script = ExtResource("2_mvrsf")
+platform_scene = ExtResource("3_hdo7f")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.23558, 0.620228, -6.2442)
+use_collision = true
+size = Vector3(0.665, 2.735, 4.635)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(-0.99998, 0, 0.00561949, 0, 1, 0, -0.00561949, 0, -0.99998, -4.39307, -0.328136, 0.404713)
+snap = 1e-06
+size = Vector3(0.887324, 2.15473, 1.71395)
+material = SubResource("StandardMaterial3D_nvg63")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(-0.00280976, 0, -0.999993, 0, 1, 0, 0.999993, 0, -0.00280976, -2.16252, -0.019001, 2.56073)
+size = Vector3(0.665, 2.735, 5.05)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(0.0242577, 0, -0.999706, 0, 1, 0, 0.999706, 0, 0.0242577, -2.19228, -0.0095005, -1.95264)
+size = Vector3(0.665, 2.735, 5.05)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.35427, -0.0418985, 0.0717044)
+size = Vector3(0.665, 2.735, 4.28)
+
+[connection signal="body_entered" from="collectible" to="collectible/MeshInstance3D" method="_on_collectible_body_entered"]
