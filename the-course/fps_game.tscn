@@ -1,8 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://dygk4c04n4imt"]
+[gd_scene load_steps=17 format=3 uid="uid://dygk4c04n4imt"]
 
-[ext_resource type="Script" uid="uid://cce5vwskyjcd4" path="res://fps_dude.gd" id="1_cykxj"]
-[ext_resource type="Script" uid="uid://cudw2yan6jjem" path="res://ammo_dude.gd" id="2_jkgwa"]
+[ext_resource type="Script" path="res://fps_dude.gd" id="1_cykxj"]
+[ext_resource type="Script" path="res://ammo_dude.gd" id="2_jkgwa"]
 [ext_resource type="PackedScene" uid="uid://sjfix0ml77ca" path="res://gun.tscn" id="3_jkgwa"]
+[ext_resource type="PackedScene" uid="uid://d0gfx2lihdq44" path="res://examples_dd3d/gdquest_bee_bot/bee_bot.glb" id="4_6oc3c"]
+[ext_resource type="PackedScene" uid="uid://kod0awm1ha4o" path="res://examples_dd3d/addons/gdquest_gobot/model/gobot.glb" id="5_1hqgi"]
+[ext_resource type="PackedScene" uid="uid://h2we7rb772hy" path="res://examples_dd3d/addons/gdquest_round_bat/model/bat.glb" id="6_fj1kr"]
+[ext_resource type="PackedScene" uid="uid://16iu10wxub40" path="res://examples_dd3d/addons/gdquest_sophia/model/sophia.glb" id="7_qrdh5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o6d5r"]
 
@@ -80,7 +84,7 @@ shape = SubResource("CapsuleShape3D_uiy6f")
 [node name="Camera3D" type="Camera3D" parent="fps_dude"]
 
 [node name="gun" parent="fps_dude/Camera3D" instance=ExtResource("3_jkgwa")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0573997, -0.0656562, -0.151852)
+transform = Transform3D(-0.159909, -0.00149712, -3.22623, 0.000830475, 6.03096, -0.00102659, 1.41032, -0.00372111, -0.365805, 0.166726, -0.104996, -0.285309)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8623, 1.04237, -0.36939)
@@ -110,5 +114,17 @@ size = Vector3(1, 3, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.94063, -0.105891, -2.24836)
 operation = 2
 size = Vector3(1, 2, 2)
+
+[node name="bee_bot" parent="." instance=ExtResource("4_6oc3c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.58548, 0.662452, 1.28074)
+
+[node name="gobot" parent="." instance=ExtResource("5_1hqgi")]
+transform = Transform3D(0.466587, 0, 0.884475, 0, 1, 0, -0.884475, 0, 0.466587, -10.4189, 0, 2.487)
+
+[node name="bat" parent="." instance=ExtResource("6_fj1kr")]
+transform = Transform3D(0.587649, 0.412035, -0.696345, -0.53968, 0.840818, 0.0420825, 0.602839, 0.351073, 0.716473, -8.44736, 0.908662, 2.05638)
+
+[node name="sophia" parent="." instance=ExtResource("7_qrdh5")]
+transform = Transform3D(0.999888, 0.0142382, -0.00468549, -0.014937, 0.97257, -0.232129, 0.00125186, 0.232173, 0.972674, -9.61901, 1.71791, 2.2365)
 
 [connection signal="body_entered" from="ammo" to="ammo" method="_on_body_entered"]
