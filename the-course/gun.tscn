@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=2 format=3 uid="uid://xri7hxg18frh"]
 
 [ext_resource type="Script" path="res://gun.gd" id="1_6xmve"]
@@ -13,3 +14,21 @@ size = Vector3(0.16918, 0.164834, 0.413477)
 
 [node name="bullet_spawn" type="Marker3D" parent="."]
 transform = Transform3D(0.999865, -2.15301e-05, -0.0164535, 1.52925e-05, 1, -0.000379411, 0.0164535, 0.000379104, 0.999865, -0.0160791, 0, 0.331129)
+=======
+[gd_scene load_steps=3 format=3 uid="uid://sjfix0ml77ca"]
+
+[ext_resource type="Script" uid="uid://ccw50b8r7ifwt" path="res://gun_dude.gd" id="1_vk1bi"]
+[ext_resource type="PackedScene" uid="uid://dd51f5khwha8t" path="res://fps_bullet.tscn" id="2_dk5gl"]
+
+[node name="gun" type="CSGBox3D"]
+size = Vector3(0.1, 0.01, 0.01)
+script = ExtResource("1_vk1bi")
+bullet_scene = ExtResource("2_dk5gl")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.043366, -0.0232911, 0)
+size = Vector3(0.01, 0.05, 0.01)
+
+[node name="bullet_spawn" type="Marker3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0901547, 0, 0)
+>>>>>>> 461f13866faf810151202d8c4bb510b209107fc7
