@@ -37,6 +37,10 @@ func _physics_process(delta: float) -> void:
 	var vel = - transform.y * f * SPEED
 	print(transform.y)
 
+
+	var vel = - transform.y * f * SPEED
+	print(transform.y)
+
 	velocity = vel
 	
 	
@@ -45,7 +49,10 @@ func _physics_process(delta: float) -> void:
 		b.global_position = bullet_spawn_point.global_position
 		b.global_rotation = bullet_spawn_point.global_rotation
 
-		get_parent().add_child(b)
+		get_tree().get_root().add_child(b) 
+
+	
+
 
 	
 	rotate(rot)
